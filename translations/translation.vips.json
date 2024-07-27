@@ -1,0 +1,146 @@
+{
+    "adminmenu.title": {
+        "en": "Admin VIP Menu",
+        "ro": "VIP Menu Administrativ"
+    },
+    "no_access": {
+        "en": "You don't have access to use this command.\n",
+        "ro": "Nu ai acces să folosești această comandă.\n"
+    },
+    "success_reloadconfig": {
+        "en": "You've succesfully reloaded VIP Configuration.",
+        "ro": "Ai reîncărcat cu succes configurația pentru VIP."
+    },
+    "no_vips": {
+        "en": "There are no VIP Players online.",
+        "ro": "Nu este niciun jucător VIP online."
+    },
+    "no_players_without_vip": {
+        "en": "There are no players without VIP online.",
+        "ro": "Nu este niciun jucător fără VIP online."
+    },
+    "not_connected": {
+        "en": "The player is no more connected.",
+        "ro": "Jucătorul nu mai este conectat."
+    },
+    "online_vips": {
+        "en": "Online VIP Players",
+        "ro": "Jucători VIP Online"
+    },
+    "vip_menu": {
+        "en": "VIP Menu",
+        "ro": "Meniu VIP"
+    },
+    "vip_info": {
+        "en": "VIP Informations",
+        "ro": "Informații VIP"
+    },
+    "no_vip": {
+        "en": "You don't have any VIP group.",
+        "ro": "Nu ai niciun grup VIP."
+    },
+    "status": {
+        "en": "Status",
+        "ro": "Status"
+    },
+    "enabled": {
+        "en": "Enabled",
+        "ro": "Activat"
+    },
+    "disabled": {
+        "en": "Disabled",
+        "ro": "Dezactivat"
+    },
+    "toggle_status": {
+        "en": "Toggle Status",
+        "ro": "Schimbă Status"
+    },
+    "name": {
+        "en": "Name",
+        "ro": "Nume"
+    },
+    "expires_at": {
+        "en": "Expires at",
+        "ro": "Expiră la"
+    },
+    "add_vip": {
+        "en": "Add VIP",
+        "ro": "Adaugă VIP"
+    },
+    "remove_vip": {
+        "en": "Remove VIP",
+        "ro": "Șterge VIP"
+    },
+    "see_vip_groups": {
+        "en": "See VIP Groups",
+        "ro": "Vezi grupurile VIP"
+    },
+    "reload_configuration": {
+        "en": "Reload Configuration",
+        "ro": "Reîncarcă configurația"
+    },
+    "features": {
+        "en": "Features",
+        "ro": "Beneficii"
+    },
+    "seconds": {
+        "en": "%.2f second(s)",
+        "ro": "%.2f secunde"
+    },
+    "minutes": {
+        "en": "%.2f minute(s)",
+        "ro": "%.2f minut(e)"
+    },
+    "hours": {
+        "en": "%.2f hour(s)",
+        "ro": "%.2f ore"
+    },
+    "days": {
+        "en": "%.2f day(s)",
+        "ro": "%.2f zi(le)"
+    },
+    "forever": {
+        "en": "Forever",
+        "ro": "Pentru totdeauna"
+    },
+    "never": {
+        "en": "Never",
+        "ro": "Niciodată"
+    },
+    "time": {
+        "en": "Time",
+        "ro": "Timp"
+    },
+    "group": {
+        "en": "Group",
+        "ro": "Grup"
+    },
+    "addvip_confirm": {
+        "en": "Are you sure do you want to give <font color='#{COLOR}'>{PLAYER_NAME}</font> VIP <font color='#{COLOR}'>{VIP_NAME}</font> for <font color='#{COLOR}'>{TIME}</font>?",
+        "ro": "Ești sigur că vrei să îi dai lui <font color='#{COLOR}'>{PLAYER_NAME}</font> VIP <font color='#{COLOR}'>{VIP_NAME}</font> pentru <font color='#{COLOR}'>{TIME}</font>?"
+    },
+    "removevip_confirm": {
+        "en": "Are you sure do you want to remove <font color='#{COLOR}'>{PLAYER_NAME}'s</font> VIP <font color='#{COLOR}'>{VIP_NAME}</font>?",
+        "ro": "Ești sigur că vrei să îi scoți lui <font color='#{COLOR}'>{PLAYER_NAME}</font> VIP <font color='#{COLOR}'>{VIP_NAME}</font>?"
+    },
+    "confirm": {
+        "en": "Confirm",
+        "ro": "Confirmare"
+    },
+    "yes": {
+        "en": "Yes",
+        "ro": "Da"
+    },
+    "no": {
+        "en": "No",
+        "ro": "Nu"
+    },
+    "addvip_finish": {
+        "en": "You've succesfully gave VIP {GROUP_NAME} to {PLAYER_NAME} for {TIME}.",
+        "ro": "I-ai dat cu succes VIP {GROUP_NAME} lui {PLAYER_NAME} pentru {TIME}."
+    },
+    "removevip_finish": {
+        "en": "You've succesfully removed {PLAYER_NAME}'s VIP.",
+        "ro": "I-ai șters cu succes VIP-ul lui {PLAYER_NAME}."
+    }
+}

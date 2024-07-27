@@ -1,0 +1,5 @@
+Features = {}
+FeaturesMap = {}
+FeaturesTranslationMap = {}
+
+PlayerFeaturesStatus = {}

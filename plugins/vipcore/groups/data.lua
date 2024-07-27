@@ -1,0 +1,3 @@
+Groups = {}
+GroupsMap = {}
+ExpireTimes = {}

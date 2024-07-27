@@ -1,0 +1,30 @@
+{
+    "groups": [
+        {
+            "id": "group_1",
+            "display_name": "Group 1",
+            "features": {
+                "health": 110,
+                "armor": 110,
+                "money": 2500,
+                "healthshot": 1
+            }
+        }
+    ],
+    "times": [
+        3600,
+        21600,
+        86400,
+        259200,
+        604800,
+        1209600,
+        2592000,
+        7776000,
+        15552000
+    ],
+    "prefix": "[{green}Swiftly{default}]",
+    "color": "32CD32",
+    "manage_vip_flags": "z",
+    "table_name": "vips",
+    "timezone_offset": 3600
+}
