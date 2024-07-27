@@ -235,7 +235,7 @@ commands:Register("addvipmenu_selecttime", function(playerid, args, argc, silent
     if not AddVipMenuSelectedGroup[playerid] then return player:HideMenu() end
 
     local timeidx = tonumber(args[1])
-    if config:Exists("vips.times[" .. timeidx .. "]") == 0 then return end
+    if not config:Exists("vips.times[" .. timeidx .. "]") then return end
     AddVipMenuSelectedTime[playerid] = timeidx
 
     local pid = AddVipMenuSelectedPlayer[playerid]
