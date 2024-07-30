@@ -1,5 +1,5 @@
 AddEventHandler("OnPluginStart", function(event)
-    db = Database("swiftly_vipcore")
+    db = Database(config:Fetch("vips.connection_name"))
     if not db:IsConnected() then return EventResult.Continue end
 
     db:Query(string.format(

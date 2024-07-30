@@ -25,6 +25,7 @@
     "prefix": "[{green}Swiftly{default}]",
     "color": "32CD32",
     "manage_vip_flags": "z",
+    "connection_name": "swiftly_vipcore",
     "table_name": "vips",
     "timezone_offset": 3600
 }
