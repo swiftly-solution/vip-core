@@ -19,10 +19,11 @@ commands:Register("vip", function(playerid, args, argc, silent, prefix)
         end
     end
 
+    player:HideMenu()
+
     menus:RegisterTemporary(string.format("vipmenu_%d", playerid), FetchTranslation("vips.vip_menu"),
         config:Fetch("vips.color"), options)
 
-    player:HideMenu()
     player:ShowMenu(string.format("vipmenu_%d", playerid))
 end)
 
@@ -45,11 +46,12 @@ commands:Register("vipopenfeaturemenu", function(playerid, args, argc, silent, p
         { FetchTranslation("vips.toggle_status"),                                                                                                                                                                                                                                                 "sw_viptogglestatus " .. feature }
     }
 
+    player:HideMenu()
+
     menus:RegisterTemporary("vipmenu_" .. feature .. "_" .. playerid,
         string.format("%s - %s", FetchTranslation("vips.vip_menu"), FetchTranslation(FeaturesTranslationMap[feature])),
         config:Fetch("vips.color"), options)
 
-    player:HideMenu()
     player:ShowMenu("vipmenu_" .. feature .. "_" .. playerid)
 end)
 
@@ -89,12 +91,13 @@ commands:Register("vipinfo", function(playerid, args, argc, silent, prefix)
 
     local expiretime = ExpireTimes[tostring(player:GetSteamID())]
 
+    player:HideMenu()
+
     menus:RegisterTemporary(string.format("vipmenu_info_%d", playerid), FetchTranslation("vips.vip_info"),
         config:Fetch("vips.color"), {
             { string.format("%s: %s", FetchTranslation("vips.name"), Groups[GroupsMap[player:GetVar("vip.group")] + 1].display_name),                                                                                  "" },
             { string.format("%s: %s", FetchTranslation("vips.expires_at"), expiretime ~= 0 and os.date("%d/%m/%Y %H:%M:%S", expiretime + (config:Fetch("vips.timezone_offset"))) or FetchTranslation("core.forever")), "" },
         })
 
-    player:HideMenu()
     player:ShowMenu(string.format("vipmenu_info_%d", playerid))
 end)
