@@ -24,7 +24,7 @@
 
 1. Download the newest [release](https://github.com/swiftly-solution/vip-core/releases).
 2. Everything is drag & drop, so i think you can do it!
-3. Setup database connection in `addons/swiftly/configs/databases.json` with the key `swiftly_vipcore` like in the following example:
+3. Setup database connection in `addons/swiftly/configs/databases.json` with the key `swiftly_vipcore` (or change database connection name in `addons/swiftly/configs/plugins/vips.json`) like in the following example:
 ```json
 {
     "swiftly_vipcore": {
