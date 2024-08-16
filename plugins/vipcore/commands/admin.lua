@@ -44,9 +44,11 @@ commands:Register("onlinevipsmenu", function(playerid, args, argc, silent, prefi
         local pl = GetPlayer(i)
         if pl then
             if not pl:IsFakeClient() and pl:GetVar("vip.group") ~= "none" and GroupsMap[pl:GetVar("vip.group")] then
-                table.insert(players,
+                if pl:CBasePlayerController():IsValid() then
+                    table.insert(players,
                     { string.format("%s (%s)", pl:CBasePlayerController().PlayerName,
                         Groups[GroupsMap[pl:GetVar("vip.group")] + 1].display_name), "" })
+                end
             end
         end
     end
@@ -140,7 +142,9 @@ commands:Register("addvipmenu", function(playerid, args, argc, silent, prefix)
         local pl = GetPlayer(i)
         if pl then
             if not pl:IsFakeClient() and pl:GetVar("vip.group") == "none" then
-                table.insert(players, { pl:CBasePlayerController().PlayerName, "sw_addvipmenu_selectplayer " .. i })
+                if pl:CBasePlayerController():IsValid() then
+                    table.insert(players, { pl:CBasePlayerController().PlayerName, "sw_addvipmenu_selectplayer " .. i })
+                end
             end
         end
     end
@@ -246,6 +250,7 @@ commands:Register("addvipmenu_selecttime", function(playerid, args, argc, silent
         return
     end
 
+    if not pl:CBasePlayerController():IsValid() then return end
     local options = {
         { FetchTranslation("vips.addvip_confirm"):gsub("{COLOR}", config:Fetch("vips.color")):gsub("{PLAYER_NAME}", pl:CBasePlayerController().PlayerName):gsub("{VIP_NAME}", Groups[GroupsMap[AddVipMenuSelectedGroup[playerid]] + 1].display_name):gsub("{TIME}", ComputePrettyTime(tonumber(config:Fetch("vips.times[" .. timeidx .. "]")))), "" },
         { FetchTranslation("vips.yes"),                                                                                                                                                                                                                                                                                                          "sw_addvipmenu_confirmbox yes" },
@@ -293,6 +298,7 @@ commands:Register("addvipmenu_confirmbox", function(playerid, args, argc, silent
             " " .. AddVipMenuSelectedGroup[playerid] ..
             " " .. config:Fetch("vips.times[" .. AddVipMenuSelectedTime[playerid] .. "]"))
 
+        if not pl:CBasePlayerController():IsValid() then return end
         ReplyToCommand(playerid, config:Fetch("vips.prefix"),
             FetchTranslation("vips.addvip_finish"):gsub("{GROUP_NAME}",
                 Groups[GroupsMap[AddVipMenuSelectedGroup[playerid]] + 1].display_name):gsub("{PLAYER_NAME}",
@@ -326,10 +332,12 @@ commands:Register("removevipmenu", function(playerid, args, argc, silent, prefix
         local pl = GetPlayer(i)
         if pl then
             if not pl:IsFakeClient() and pl:GetVar("vip.group") ~= "none" and GroupsMap[pl:GetVar("vip.group")] then
-                table.insert(players,
+                if pl:CBasePlayerController():IsValid() then
+                    table.insert(players,
                     { string.format("%s (%s)", pl:CBasePlayerController().PlayerName,
                         Groups[GroupsMap[pl:GetVar("vip.group")] + 1].display_name), "sw_removevipmenu_selectplayer " ..
                     i })
+                end
             end
         end
     end
@@ -361,6 +369,7 @@ commands:Register("removevipmenu_selectplayer", function(playerid, args, argc, s
     if not pl then return end
     RemoveVipMenuSelectPlayer[playerid] = pid
 
+    if not pl:CBasePlayerController():IsValid() then return end
     local options = {
         { FetchTranslation("vips.removevip_confirm"):gsub("{COLOR}", config:Fetch("vips.color")):gsub("{PLAYER_NAME}", pl:CBasePlayerController().PlayerName):gsub("{VIP_NAME}", Groups[GroupsMap[pl:GetVar("vip.group")] + 1].display_name), "" },
         { FetchTranslation("vips.yes"),                                                                                                                                                                                                       "sw_removevipmenu_confirmbox yes" },
@@ -399,6 +408,7 @@ commands:Register("removevipmenu_confirmbox", function(playerid, args, argc, sil
             return
         end
         server:Execute(string.format("sw_removevip %s", tostring(pl:GetSteamID())))
+        if not pl:CBasePlayerController():IsValid() then return end
         ReplyToCommand(playerid, config:Fetch("vips.prefix"),
             FetchTranslation("vips.removevip_finish"):gsub("{PLAYER_NAME}", pl:CBasePlayerController().PlayerName))
     end
